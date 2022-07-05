@@ -1,4 +1,7 @@
 <html>
+    <head>
+        <title>Jack awesomeness</title>
+    </head>
     <body>
         <h1>Benvenuti nel mio sito web </h1>
         <p></p>
@@ -11,7 +14,29 @@
             color:red;
             }
         </style>
-        <script>
+        
+    <div>
+        <input type="text" id="first-operand">
+        <input type="text" id="second-operand">
+        <span>=</span>
+        <span id="result"></span>
+        
+
+    </div>
+    <div>
+        <button onclick="sum()">Somma</button>
+        <button onclick="diff()">Differenza</button>
+    </div>
+
+    <div id="ball" style="background: red; width: 100px; height: 100px; border-radius: 100%; position: absolute; top: 0; right: 0;"></div>
+
+    <div>
+        <button onclick="up()">⬆️</button>
+        <button onclick="down()">⬇️</button>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script>
         //alert(`Ciao ${name}!!`);
 
         
@@ -31,24 +56,38 @@
             const operand = parseFloat(operandTextValue);
             return operand;
         }
+
         function setResult(result) {
             document.getElementById("result").innerText = result;
         }
+
+        const ball = document.getElementById("ball");
+
+        function up() {
+            const top = parseFloat(ball.style.top);
+            ball.style.top = top - 10;
+        }
+        function down() {
+            const top = parseFloat(ball.style.top);
+            ball.style.top = top + 10;
+        }
+
+        document.onkeydown = function (event) {
+            switch (event.keyCode) {
+                case 37:
+                    console.log("Left key is pressed.");
+                    break;
+                case 38:
+                    up();
+                    break;
+                case 39:
+                    console.log("Right key is pressed.");
+                    break;
+                case 40:
+                    down();
+                    break;
+            }
+        };
     </script>
-    <div>
-        <input type="text" id="first-operand">
-        <input type="text" id="second-operand">
-        <span>=</span>
-        <span id="result"></span>
-        
-
-    </div>
-    <div>
-        <button onclick="sum()">Somma</button>
-        <button onclick="diff()">Differenza</button>
-    </div>
-
-    <script src="scripts/main.js"></script>
-    
     </body>
 </html>
