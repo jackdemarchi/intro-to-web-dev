@@ -71,16 +71,22 @@
             const top = parseFloat(ball.style.top);
             ball.style.top = top + 10;
         }
+        function right() {
+            const right = parseFloat(ball.style.right);
+            ball.style.right = right + 10;
+        }
 
         document.onkeydown = function (event) {
             switch (event.keyCode) {
                 case 37:
+                    right();
                     console.log("Left key is pressed.");
                     break;
                 case 38:
                     up();
                     break;
                 case 39:
+                    right();
                     console.log("Right key is pressed.");
                     break;
                 case 40:
@@ -88,6 +94,8 @@
                     break;
             }
         };
+     
     </script>
+<div>pollo</div>
     </body>
 </html>
