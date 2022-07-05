@@ -16,7 +16,10 @@
             color:rgb(132, 16, 161);
             }
         </style>
-        
+        <div></div>
+        <div>
+            <h3>Calcolatrice</h3>
+        <div></div>
     <div>
         <input type="text" id="first-operand">
         <input type="text" id="second-operand">
@@ -28,8 +31,12 @@
         <button onclick="sum()">Somma</button>
         <button onclick="diff()">Differenza</button>
     </div>
+    <div>
+        <button onclick="multiply()">Moltiplicazione</button>
+        <button onclick="divide()">Divisione</button>
+    </div>
 
-    <div id="ball" style="background: red; width: 100px; height: 100px; border-radius: 100%; position: absolute; top: 0; right: 0;"></div>
+    <div id="ball" style="background: rgb(0, 128, 255); width: 100px; height: 100px; border-radius: 100%; position: absolute; top: 0; right: 0;"></div>
 
     <div>
         <button onclick="up()">⬆️</button>
@@ -51,6 +58,17 @@
             const secondOperand = getOperand("second-operand");
             setResult(firstOperand - secondOperand);
         }
+        function divide(){
+            const firstOperand = getOperand("first-operand");
+            const secondOperand = getOperand("second-operand");
+            setResult(firstOperand / secondOperand);
+        }
+        function multiply(){
+            const firstOperand = getOperand("first-operand");
+            const secondOperand = getOperand("second-operand");
+            setResult(firstOperand * secondOperand);
+        }
+
 
         function getOperand(operandId){
             const operandTextValue = document.getElementById(operandId).value;
