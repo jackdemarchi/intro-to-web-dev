@@ -1,22 +1,54 @@
-<h1>Benvenuti nel mio sito web </h1>
-<p></p>
-<p>Ciao a tutti, sono Giacomo De Marchi, studente di 17 anni.</p>
-<p>vivo a Sarmede e ho 3 gatti</p>
-<img src="https://cdn.discordapp.com/avatars/754263507486375947/7eb173c84177ca7023c21f822e95e745.webp?size=160" alt="foto profilo di Giacomo">
-<a href="https://github.com/jackdemarchi">Il mio profilo github</a>
-<style>
-    p {
-        color:red;
-    }
-</style>
-<script>
+<html>
+    <body>
+        <h1>Benvenuti nel mio sito web </h1>
+        <p></p>
+        <p>Ciao a tutti, sono Giacomo De Marchi, studente di 17 anni.</p>
+        <p>vivo a Sarmede e ho 3 gatti</p>
+        <img src="https://cdn.discordapp.com/avatars/754263507486375947/7eb173c84177ca7023c21f822e95e745.webp?size=160" alt="foto profilo di Giacomo">
+        <a href="https://github.com/jackdemarchi">Il mio profilo github</a>
+        <style>
+            p {
+            color:red;
+            }
+        </style>
+        <script>
+        //alert(`Ciao ${name}!!`);
+
+        
+        function sum(){
+            const firstOperand = getOperand("first-operand");
+            const secondOperand = getOperand("second-operand");
+            setResult(firstOperand + secondOperand);
+        }
+        function diff(){
+            const firstOperand = getOperand("first-operand");
+            const secondOperand = getOperand("second-operand");
+            setResult(firstOperand - secondOperand);
+        }
+
+        function getOperand(operandId){
+            const operandTextValue = document.getElementById(operandId).value;
+            const operand = parseFloat(operandTextValue);
+            return operand;
+        }
+        function setResult(result) {
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+    <div>
+        <input type="text" id="first-operand">
+        <input type="text" id="second-operand">
+        <span>=</span>
+        <span id="result"></span>
+        
+
+    </div>
+    <div>
+        <button onclick="sum()">Somma</button>
+        <button onclick="diff()">Differenza</button>
+    </div>
+
+    <script src="scripts/main.js"></script>
     
-    function greet(){
-        const name = document.getElementById("name").value;
-        alert(`Ciao ${name}!!`);
-    }
-</script>
-<div>
-    <input type="text" id="name">
-    <button onclick="greet()">Greet me</button>
-</div>
+    </body>
+</html>
