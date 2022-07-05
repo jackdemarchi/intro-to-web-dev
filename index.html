@@ -71,15 +71,19 @@
             const top = parseFloat(ball.style.top);
             ball.style.top = top + 10;
         }
-        function right() {
+        function left() {
             const right = parseFloat(ball.style.right);
             ball.style.right = right + 10;
+        }
+        function right() {
+            const right = parseFloat(ball.style.right);
+            ball.style.right = right - 10;
         }
 
         document.onkeydown = function (event) {
             switch (event.keyCode) {
                 case 37:
-                    right();
+                    left();
                     console.log("Left key is pressed.");
                     break;
                 case 38:
