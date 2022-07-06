@@ -1,8 +1,13 @@
+
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Jack awesomeness</title>
+        <meta charset="utf-8">
+        <title>Jack's website</title>
     </head>
     <body>
+       
+
         <h1>Benvenuti nel mio sito web </h1>
         <p></p>
         <p>Ciao a tutti, sono Giacomo De Marchi, studente di 17 anni,</p>
@@ -43,86 +48,20 @@
     <div>
         
     </div>
-    <div>
-        <button onclick="up()">⬆️</button>
-        <button onclick="down()">⬇️</button>
-    </div>
+    <button id="change-user" class="digit">1</button>
 
-    <script src="scripts/main.js"></script>
+    <p>Japanese example: ご飯が熱い。</p>
+  
     <script>
         //alert(`Ciao ${name}!!`);
 
         
-        function sum(){
-            const firstOperand = getOperand("first-operand");
-            const secondOperand = getOperand("second-operand");
-            setResult(firstOperand + secondOperand);
-        }
-        function diff(){
-            const firstOperand = getOperand("first-operand");
-            const secondOperand = getOperand("second-operand");
-            setResult(firstOperand - secondOperand);
-        }
-        function divide(){
-            const firstOperand = getOperand("first-operand");
-            const secondOperand = getOperand("second-operand");
-            setResult(firstOperand / secondOperand);
-        }
-        function multiply(){
-            const firstOperand = getOperand("first-operand");
-            const secondOperand = getOperand("second-operand");
-            setResult(firstOperand * secondOperand);
-        }
+        
 
-
-        function getOperand(operandId){
-            const operandTextValue = document.getElementById(operandId).value;
-            const operand = parseFloat(operandTextValue);
-            return operand;
-        }
-
-        function setResult(result) {
-            document.getElementById("result").innerText = result;
-        }
-
-        const ball = document.getElementById("ball");
-
-        function up() {
-            const top = parseFloat(ball.style.top);
-            ball.style.top = top - 10;
-        }
-        function down() {
-            const top = parseFloat(ball.style.top);
-            ball.style.top = top + 10;
-        }
-        function left() {
-            const right = parseFloat(ball.style.right);
-            ball.style.right = right + 10;
-        }
-        function right() {
-            const right = parseFloat(ball.style.right);
-            ball.style.right = right - 10;
-        }
-
-        document.onkeydown = function (event) {
-            switch (event.keyCode) {
-                case 37:
-                    left();
-                    console.log("Left key is pressed.");
-                    break;
-                case 38:
-                    up();
-                    break;
-                case 39:
-                    right();
-                    console.log("Right key is pressed.");
-                    break;
-                case 40:
-                    down();
-                    break;
-            }
-        };
-     
+       
     </script>
+     <script src="scripts/main3.js"></script>
+     <script src="scripts/main.js"></script>
+ 
     </body>
 </html>
