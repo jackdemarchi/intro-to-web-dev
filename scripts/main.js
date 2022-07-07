@@ -8,19 +8,20 @@ function ballGame() {
 
   function up() {
       const top = parseFloat(ball.style.top);
-      ball.style.top = top - 10;
+      ball.style.top = (top - 10) + "px";
   }
   function down() {
       const top = parseFloat(ball.style.top);
-      ball.style.top = top + 10;
-  }
+      ball.style.top = (top + 10) + "px";
+     }
   function left() {
       const right = parseFloat(ball.style.right);
-      ball.style.right = right + 10;
+      ball.style.right = (right + 10) + "px";
+      console.log("ciuppa");
   }
   function right() {
       const right = parseFloat(ball.style.right);
-      ball.style.right = right - 10;
+      ball.style.right = (right - 10) + "px";
   }
 
   document.onkeydown = function (event) {
@@ -41,7 +42,7 @@ function ballGame() {
               break;
       }
   };
-}
+};
 
 
 
@@ -79,6 +80,3 @@ function ballGame() {
   
 
 ballGame();
-//document.querySelector('html').addEventListener('click', () => {
-  //alert('Ouch! Stop poking me!');
-//});
