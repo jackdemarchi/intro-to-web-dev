@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    background-color: white;
+    margin:auto;
+  
+  }
+  
+  html {
+    font-family: sans-serif;
+  }
+  
+  body {
+max-width: 800px;
+    margin: auto;
+    background: #ccc;
+    align-items: center;
+  }
+  
+  article {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+  }
+  
+  address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+  }
+  
+  h1 {
+    background-image: url(https://raw.githubusercontent.com/mdn/learning-area/master/css/styling-boxes/letterheaded-paper-start/logo.png);
+    mask-repeat: no-repeat;
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    
+  }
+
+  img{
+    width: 100%;
+  }
