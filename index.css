@@ -1,0 +1,41 @@
+* {
+  font-family: "Finlandica", sans-serif;
+}
+
+h1 {
+  border-bottom: 6px solid blueviolet;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 800px) {
+  .center {
+    flex-direction: row;
+  }
+  .links,
+  h2 {
+    margin-left: 50px;
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 50px;
+}
+
+a {
+  color: rgb(209, 140, 10);
+}
+
+a:visited {
+  color: #a66;
+}
+
+a:hover {
+  background-color: #a66;
+  color: white;
+}
