@@ -4,7 +4,7 @@ function ballGame() {
   function up() {
     // const top = parseFloat(ball.style.top);
     // ball.style.top = top - 10 + "px";
-    BALL_VELOCITY = Math.min(3, BALL_VELOCITY + 0.1);
+    BALL_VELOCITY = Math.min(5, BALL_VELOCITY + 0.1);
   }
   function down() {
     // const top = parseFloat(ball.style.top);
