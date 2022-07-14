@@ -189,3 +189,28 @@ function loop() {
 }
 
 loop();
+
+// Promise version
+/*fetch("https://pokeapi.co/api/v2/pokemon/")
+  .then((response) => response.json())
+  .then((json) => {
+    console.log(json);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+// Async-Await version
+const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+const json = await response.json();
+console.log(json);
+
+async function fetchPokemon() {
+  try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+  }
+}*/
