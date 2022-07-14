@@ -27,15 +27,14 @@ h1 {
 p {
   position: absolute;
   margin: 0;
-  top: 35px;
+  top: 40px;
   right: 5px;
   color: #aaa;
 }
 
+.instructions {
+  top: 57px;
+}
 .count {
-  position: absolute;
-  margin: 0;
-  top: 70px;
-  right: 5px;
-  color: #aaa;
+  top: 80px;
 }
