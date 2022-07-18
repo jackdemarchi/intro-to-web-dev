@@ -1,0 +1,151 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    function App() {
+      const [page, setPage] = React.useState("home");
+
+      const handlePageChange = (newPage) => setPage(newPage);
+
+      let pageContent;
+      switch (page) {
+        case "home": {
+          pageContent = <HomePage />;
+          break;
+        }
+        case "recipe": {
+          pageContent = <RecipePage />;
+          break;
+        }
+        default: {
+          pageContent = <NotFoundPage />;
+          break;
+        }
+      }
+      return <Layout onPageChange={handlePageChange}>{pageContent}</Layout>;
+    }
+
+    function Layout({ children, onPageChange }) {
+      return (
+        <div>
+          {children}
+          <nav>
+            <button onClick={() => onPageChange("recipe")}>
+              Want a spicy recipe??
+            </button>
+            <button onClick={() => onPageChange("home")}>Back home?</button>
+            <button onClick={() => onPageChange("sasdasdasd")}>
+              Have you ever made a mistake?
+            </button>
+          </nav>
+        </div>
+      );
+    }
+
+    function HomePage({}) {
+      const [name, setName] = React.useState("");
+      return (
+        <form>
+          <Name
+            name={name}
+            onNameChange={(event) => setName(event.target.value)}
+          />
+          <Display name={name} />
+        </form>
+      );
+    }
+
+    function NotFoundPage() {
+      return <div>404 - Page not found</div>;
+    }
+
+    function RecipePage() {
+      return (
+        <div>
+          <h1 className="container">Hummus Recipe</h1>
+          <h3>Here're a quick hummus recipe (just in case you needed it)</h3>
+          <p>
+            This recipe makes quick, tasty hummus, with no messing. It has been
+            adapted from a number of different recipes that I have read over the
+            years.
+          </p>
+
+          <p>
+            Hummus is a delicious thick paste used heavily in Greek and Middle
+            Eastern dishes. It is very tasty with salad, grilled meats and pitta
+            breads.
+          </p>
+
+          <h2>Ingredients</h2>
+          <ul>
+            <li>1 can (400g) of chick peas (garbanzo beans)</li>
+            <li>175g of tahini</li>
+            <li>6 sundried tomatoes</li>
+            <li>Half a red pepper</li>
+            <li>A pinch of cayenne pepper</li>
+            <li>1 clove of garlic</li>
+            <li>A dash of olive oil</li>
+          </ul>
+
+          <h2>Instructions</h2>
+          <ol>
+            <li>Remove the skin from the garlic, and chop coarsely</li>
+            <li>
+              Remove all the seeds and stalk from the pepper, and chop coarsely
+            </li>
+            <li>Add all the ingredients into a food processor</li>
+            <li>Process all the ingredients into a paste</li>
+            <li>
+              If you want a coarse "chunky" hummus, process it for a short time
+            </li>
+            <li>If you want a smooth hummus, process it for a longer time</li>
+          </ol>
+
+          <p>
+            For a different flavor, you could try blending in a small measure of
+            lemon and coriander, chili pepper, lime and chipotle, harissa and
+            mint, or spinach and feta cheese. Experiment and see what works for
+            you.
+          </p>
+
+          <h2>Storage</h2>
+
+          <p>
+            Refrigerate the finished hummus in a sealed container. You should be
+            able to use it for about a week after you've made it. If it starts
+            to become fizzy, you should definitely discard it.
+          </p>
+
+          <h5>
+            Hummus is suitable for freezing; you should thaw it and use it
+            within a couple of months.
+          </h5>
+        </div>
+      );
+    }
+
+    function Name({ name, onNameChange }) {
+      return (
+        <div>
+          <label>Name: </label>
+          <input value={name} onChange={onNameChange} />
+        </div>
+      );
+    }
+
+    function Display({ name }) {
+      return (
+        <div>
+          {`Hey ${name}, are you hungry?`}
+          <br />
+          <br />
+          {`You should definetely have a look down here then ;)`}
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
