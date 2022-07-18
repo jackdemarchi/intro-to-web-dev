@@ -1,0 +1,61 @@
+<style>
+  .calculator {
+    max-width: 400px;
+  }
+  .digits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .keyboard {
+    display: flex;
+    flex-direction: row;
+  }
+  .symbols {
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    height: 50px;
+    width: 50px;
+  }
+</style>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    function App() {
+      function handleClick({}) {
+        return <div></div>;
+      }
+      return (
+        <div class="calculator">
+          <textarea class="display"></textarea>
+          <div class="keyboard">
+            <div class="digits">
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>0</button>
+            </div>
+            <div class="symbols">
+              <button>/</button>
+              <button>x</button>
+              <button>+</button>
+              <button>-</button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
